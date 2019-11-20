@@ -15,6 +15,7 @@ def begin():
 
     if please == 'ye' or please == 'y':
         print('[resume ...]')
+        print('\n')
         questions()
     else:
         print('goodbye.')
@@ -29,11 +30,13 @@ def questions():
     if q1 == 'c':
         print('\n')
         print('good job, belgium would be proud')
-        answers.append('q1: correct')
+        canswers.append('question 1: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
+        print('\n')
         print('nope, the answer is brussels')
+        answers.append('question 1: wrong')
         print('\n')
 
     q2 = input('2. what is the capital city of venezuela?\n a. cardiff\n b. buenos aires'
@@ -41,10 +44,13 @@ def questions():
     if q2 == 'e':
         print('\n')
         print('good job, that\'s right')
+        canswers.append('question 2: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
+        print('\n')
         print('nope, the answer is caracas')
+        answers.append('question 2: wrong')
         print('\n')
 
     q3 = input('3. how many capital cities does malaysia have?\n > ')
@@ -52,10 +58,13 @@ def questions():
     if val1 == 13:
         print('\n')
         print('good job, that\'s correct.')
+        canswers.append('question 3: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
+        print('\n')
         print('nope, the answer is 13')
+        answers.append('question 3: wrong')
         print('\n')
 
     q4 = input('4. how many capital cities does bolivia have?\n > ')
@@ -63,10 +72,13 @@ def questions():
     if val2 == 2:
         print('\n')
         print('good job, that\'s correct.')
+        canswers.append('question 4: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
+        print('\n')
         print('nope, the answer is 2')
+        answers.append('question 4: wrong')
         print('\n')
 
     q5 = input('5. true or false: venice is sinking at the rate of 1-2 millimeters a year.\n'
@@ -75,10 +87,13 @@ def questions():
     if q5 == '1':
         print('\n')
         print('that is correct. how\'d you know?')
+        canswers.append('question 5: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
+        print('\n')
         print('nope, that is true')
+        answers.append('question 5: wrong')
         print('\n')
 
     q6 = input('6. true or false: The canal generates fully one-third of panama’s entire economy.\n'
@@ -87,13 +102,18 @@ def questions():
     if q6 == '1':
         print('\n')
         print('that is correct')
+        canswers.append('question 6: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
-        print('nope, that is true')
         print('\n')
-        
-    print(f'your score: {score}\n')
+        print('nope, that is true')
+        answers.append('question 6: wrong')
+        print('\n')
+
+    print(f'your correct answers list: {canswers}')
+    print(f'your incorrect answers list: {answers}')
+    print(f'your total score: {score} /6\n')
     again()
         
 def again():
