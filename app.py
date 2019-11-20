@@ -23,6 +23,7 @@ def begin():
         os.kill(os.getpid(),signal.SIGKILL)
 
 def questions():
+    #start score at 0
     score = 0
     print('multiple choice. enter letters from a-e.')
     q1 = input('1. what is the capital city of belgium?\n a. mexico city\n b. ottawa'
@@ -30,12 +31,14 @@ def questions():
     if q1 == 'c':
         print('\n')
         print('good job, belgium would be proud')
+        #add to correct answer list
         canswers.append('question 1: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
         print('\n')
         print('nope, the answer is brussels')
+        #add to incorrect answer list
         answers.append('question 1: wrong')
         print('\n')
 
@@ -117,7 +120,8 @@ def questions():
     print('\n')
     print(f'your total score: {score} / 6\n')
     again()
-        
+
+#play again
 def again():
     que = input('would you like to try again? type y or n\n > ')
     if que == 'y':
