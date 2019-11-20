@@ -119,6 +119,17 @@ def questions():
     print(f'your incorrect answers list: {answers}')
     print('\n')
     print(f'your total score: {score} / 6\n')
+
+    if score >= 4:
+        print('you know your capitals very well!')
+        print('\n')
+    elif score <= 3:
+        print('you don\'t know cities very well, do you?')
+        print('\n')
+    else:
+        print('get a book')
+        print('\n')
+
     again()
 
 #play again
