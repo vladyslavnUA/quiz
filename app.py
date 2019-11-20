@@ -112,8 +112,10 @@ def questions():
         print('\n')
 
     print(f'your correct answers list: {canswers}')
+    print('\n')
     print(f'your incorrect answers list: {answers}')
-    print(f'your total score: {score} /6\n')
+    print('\n')
+    print(f'your total score: {score} / 6\n')
     again()
         
 def again():
