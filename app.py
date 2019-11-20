@@ -1,6 +1,11 @@
 import os
 import signal
 
+#all wrong answers
+answers = []
+#all correct answers
+canswers = []
+
 print("Welcome to the Capital City Quiz! Here, you will be asked a series of "
 "questions about various capital cities in the world.")
 
@@ -19,17 +24,19 @@ def begin():
 def questions():
     score = 0
     print('multiple choice. enter letters from a-e.')
-    q1 = input('what is the capital city of belgium?\n a. mexico city\n b. ottawa'
+    q1 = input('1. what is the capital city of belgium?\n a. mexico city\n b. ottawa'
                '\n c. brussels\n d. washington d.c.\n e. bangkok\n > ')
     if q1 == 'c':
         print('\n')
         print('good job, belgium would be proud')
+        answers.append('q1: correct')
         score += 1
         print(f'your score: {score}\n')
     else:
         print('nope, the answer is brussels')
+        print('\n')
 
-    q2 = input('what is the capital city of venezuela?\n a. cardiff\n b. buenos aires'
+    q2 = input('2. what is the capital city of venezuela?\n a. cardiff\n b. buenos aires'
                '\n c. cairo\n d. dublin\n e. caracas\n > ')
     if q2 == 'e':
         print('\n')
@@ -38,8 +45,9 @@ def questions():
         print(f'your score: {score}\n')
     else:
         print('nope, the answer is caracas')
+        print('\n')
 
-    q3 = input('how many capital cities does malaysia have?\n > ')
+    q3 = input('3. how many capital cities does malaysia have?\n > ')
     val1 = int(q3)
     if val1 == 13:
         print('\n')
@@ -48,8 +56,9 @@ def questions():
         print(f'your score: {score}\n')
     else:
         print('nope, the answer is 13')
+        print('\n')
 
-    q4 = input('how many capital cities does bolivia have?\n > ')
+    q4 = input('4. how many capital cities does bolivia have?\n > ')
     val2 = int(q4)
     if val2 == 2:
         print('\n')
@@ -58,7 +67,40 @@ def questions():
         print(f'your score: {score}\n')
     else:
         print('nope, the answer is 2')
+        print('\n')
+
+    q5 = input('5. true or false: venice is sinking at the rate of 1-2 millimeters a year.\n'
+               'enter 1 for true // 0 for false: ')
+    val3 = int(q5)
+    if q5 == '1':
+        print('\n')
+        print('that is correct. how\'d you know?')
+        score += 1
+        print(f'your score: {score}\n')
+    else:
+        print('nope, that is true')
+        print('\n')
+
+    q6 = input('6. true or false: The canal generates fully one-third of panama’s entire economy.\n'
+               'enter 1 for true // 0 for false: ')
+    val4 = int(q6)
+    if q6 == '1':
+        print('\n')
+        print('that is correct')
+        score += 1
+        print(f'your score: {score}\n')
+    else:
+        print('nope, that is true')
+        print('\n')
         
-#def again():
+    print(f'your score: {score}\n')
+    again()
+        
+def again():
+    que = input('would you like to try again? type y or n\n > ')
+    if que == 'y':
+        begin()
+    else:
+        os.kill(os.getpid(),signal.SIGKILL)
     
 begin()
